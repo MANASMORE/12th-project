@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 
 #Linking csv file to python
 df=pd.read_csv('Main\\pokedexfinal.csv')
-df
 
 #Creating a function to add a Pokemon
 def add():
@@ -249,6 +248,7 @@ while True:
             pass
     
     elif query==0:
+        print('Thank you for using the Pokedex!!!!! \n')
         break
 
     else:

@@ -159,7 +159,7 @@ def stat():
     
     elif kk==4:
         bins=np.arange(10)-0.25
-        d=plt.hist(df1['generation'],bins,width=0.5,align='mid')
+        d=plt.hist(df['generation'],bins,width=0.5,align='mid')
         plt.xlabel('Generation Number')
         plt.ylabel('No. of pokemons')
         plt.xticks(np.arange(8))

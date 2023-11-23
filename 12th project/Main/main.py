@@ -131,7 +131,7 @@ def update():
 
 #Creating a function for seeing the statistical data
 def stat():
-    kk=int(input('Press 1 for getting graph of Number of pokemons v/s Primary type. \n Press 2 for getting graph of Number of pokemons v/s Secondary type. \n Press 3 for getting graph of Number of pokemons v/s Legendary status. \n Press 4 for getting graph of Number of pokemons v/s Generation.'))
+    kk=int(input('Press 1 for getting graph of Number of pokemons v/s Primary type. \n Press 2 for getting graph of Number of pokemons v/s Secondary type. \n Press 3 for getting graph of Number of pokemons v/s Legendary status. \n Press 4 for getting graph of Number of pokemons v/s Generation. \n'))
     offset=.4
     if kk==1:
         kk1=plt.hist(df['type1'],bins=18,ec='k',align='mid')

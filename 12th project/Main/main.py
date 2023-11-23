@@ -232,6 +232,7 @@ while True:
         else:
             print('Please Enter a Valid Input')
             pass
+            
     elif query==5:
         stat()
         z5=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))

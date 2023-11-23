@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Linking csv file to python
-df=pd.read_csv('pokedexfinal.csv')
+df=pd.read_csv('Main\\pokedexfinal.csv')
 df
 
 #Creating a function to add a Pokemon
@@ -56,7 +56,7 @@ def add():
 
 #Creating a function to search for a  Pokemon
 def search():
-    query1=int(input("Search p: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name'''))
+    query1=int(input("Search p: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name \n'''))
     if query1==1:
         pno=int(input('Enter Pokedex No: \n'))
         print(df.loc[[pno-1]])
@@ -66,7 +66,7 @@ def search():
 
 #Creating a function to remove a Pokemon
 def remove():
-    query2=int(input("Remove: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name'''))
+    query2=int(input("Remove: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name \n'''))
     if query2==1:
         pno1=int(input('Enter Pokedex No: \n'))
         a=df.drop([pno1-1],inplace=True)
@@ -249,6 +249,7 @@ while True:
             pass
     
     elif query==0:
+        print('Thank you for using the Pokedex!!!!! \n')
         break
 
     else:

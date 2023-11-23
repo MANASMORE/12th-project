@@ -176,77 +176,83 @@ while True:
     query=int(input('What do you want to do?\n Press 1 for adding a Pokemon.\n Press 2 for searching a Pokemon.\n Press 3 for removing a Pokemon. \n Press 4 for updating a Pokemon. \n Press 5 to see graphs \n Press 0 to exit \n'))
     if query==1:
         add()
-        z1=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
-        if z1==2:
-            print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
-            break
-            
-        elif z1==1:
-            pass
+        while True:
+            z1=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
+            if z1==2:
+                print('Thank you for using the Pokedex!!!!! \n')
+                df.to_csv('pokedexfinal.csv',index=False)
+                break
+                
+            elif z1==1:
+                pass
 
-        else:
-            print('Please Enter a Valid Input')
-            pass
+            else:
+                print('Please Enter a Valid Input')
+                pass
 
     elif query==2:
         search()
-        z2=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
-        if z2==2:
-            print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
-            break
+        while True:
+            z2=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
+            if z2==2:
+                print('Thank you for using the Pokedex!!!!! \n')
+                df.to_csv('pokedexfinal.csv',index=False)
+                break
+                
+            elif z2==1:
+                pass
             
-        elif z2==1:
-            pass
-        
-        else:
-            print('Please Enter a Valid Input')
-            pass
+            else:
+                print('Please Enter a Valid Input')
+                pass
 
     elif query==3:
         remove()
-        z3=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
-        if z3==2:
-            print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
-            break
+        while True:
+            z3=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
+            if z3==2:
+                print('Thank you for using the Pokedex!!!!! \n')
+                df.to_csv('pokedexfinal.csv',index=False)
+                break
 
-        elif z3==1:
-            pass
-        
-        else:
-            print('Please Enter a Valid Input')
-            pass
+            elif z3==1:
+                pass
+            
+            else:
+                print('Please Enter a Valid Input')
+                pass
 
     elif query==4:
         update()
-        z4=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
-        if z4==2:
-            print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
-            break
+        while True:
+            z4=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
+            if z4==2:
+                print('Thank you for using the Pokedex!!!!! \n')
+                df.to_csv('pokedexfinal.csv',index=False)
+                break
 
-        elif z4==1:
-            pass
+            elif z4==1:
+                pass
+            
+            else:
+                print('Please Enter a Valid Input')
+                pass
         
-        else:
-            print('Please Enter a Valid Input')
-            pass
     elif query==5:
         stat()
-        z5=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
-        if z5==2:
-            print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
-            break
+        while True:
+            z5=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
+            if z5==2:
+                print('Thank you for using the Pokedex!!!!! \n')
+                df.to_csv('pokedexfinal.csv',index=False)
+                break
 
-        elif z5==1:
-            pass
-        
-        else:
-            print('Please Enter a Valid Input')
-            pass
+            elif z5==1:
+                pass
+            
+            else:
+                print('Please Enter a Valid Input')
+                pass
     
     elif query==0:
         print('Thank you for using the Pokedex!!!!! \n')

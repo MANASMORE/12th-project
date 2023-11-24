@@ -114,11 +114,11 @@ def update():
                 ty2=np.NaN
             df.at[q7-1,'type2']=ty3
 
-        elif query5==2:
+        elif query6==2:
             h=int(input('Enter new height of Pokemon(in metres): \n'))
             df.at[q7-1,'height_m']=h
 
-        elif query5==3:
+        elif query6==3:
             w=int(input('Enter new weight of Pokemon(in kilograms): \n'))
             df.at[q7-1,'weight_kg']=w
 

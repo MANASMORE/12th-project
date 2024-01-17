@@ -4,8 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Linking csv file to python
-df=pd.read_csv('pokedexfinal.csv')
-df
+df=pd.read_csv('Main\\pokedexfinal.csv')
 
 #Creating a function to add a Pokemon
 def add():
@@ -15,13 +14,13 @@ def add():
             ask2=int(input('How many pokemons do you want to enter?: \n'))
             for i in range(0,ask2):
                 n=str(input('Enter the name of pokemon: \n'))
-                t1=str(input("Enter Primary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal']'''))
+                t1=str(input("Enter Primary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal']\n'''))
                 while t1 not in df.type1.unique():
-                    print('Please Enter correct Primary T')
+                    print('Please Enter correct Primary T\n')
                     t1=str(input("Enter Primary Type of Pokemon: \n"))
-                t2=str(input("Enter Secondary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']'''))
+                t2=str(input("Enter Secondary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']\n'''))
                 while t2 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic', 'steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
-                    print('Please Enter correct Secondary T')
+                    print('Please Enter correct Secondary T\n')
                     t2=str(input("Enter Primary Type of Pokemon: \n"))
                 if t2=='none':
                     t2=np.NaN
@@ -31,7 +30,8 @@ def add():
                 l=str(input('Legendary(yes/no): \n'))
                 p_no=len(df.index)+1
                 df.loc[len(df.index)]=[p_no,n,t1.lower(),t2,gen,h,w,l]
-                break
+            break
+
         elif ask==2:
             n=str(input('Enter the name of pokemon: \n'))
             t1=str(input("Enter Primary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal']'''))
@@ -59,14 +59,20 @@ def search():
     query1=int(input("Search p: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name'''))
     if query1==1:
         pno=int(input('Enter Pokedex No: \n'))
-        print(df.loc[[pno-1]])
+        if pno in df['pokedex_number']:
+            print(df.loc[[pno-1]])
+        else:
+            print('Sorry! there is no pokemon for pokedex no ', pno)
     elif query1==2:
         nam=str(input('Enter Pokemon Name: \n'))
-        print(df.loc[df['name']==nam])
+        if nam in df['name']:
+            print(df.loc[df['name']==nam])
+        else:
+            print('Sorry! there is no pokemon named ', nam ,'in the database')
 
 #Creating a function to remove a Pokemon
 def remove():
-    query2=int(input("Remove: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name'''))
+    query2=int(input("Remove: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name\n'''))
     if query2==1:
         pno1=int(input('Enter Pokedex No: \n'))
         a=df.drop([pno1-1],inplace=True)
@@ -84,7 +90,7 @@ def update():
         q5=df.index[df['name']==q4]
         q6=df.index.get_loc(q5[0])
         print(q5)
-        query5=int(input("What do you want to Update?: \n"'''Press 1 for Secondary Type, Press 2 for height, Press 3 for weight'''))
+        query5=int(input("What do you want to Update?: \n"'''Press 1 for Secondary Type, Press 2 for height, Press 3 for weight\n'''))
         if query5==1:
             ty2=input("Enter the new Secondary type: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']''')
             while ty2 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
@@ -105,14 +111,14 @@ def update():
 
     elif query3==2:
         q7=int(input('Enter Pokedex No: \n'))
-        query6=int(input("What do you want to Update?: \n"'''Press 1 for Secondary Type, Press 2 for height, Press 3 for weight'''))
+        query6=int(input("What do you want to Update?: \n"'''Press 1 for Secondary Type, Press 2 for height, Press 3 for weight\n'''))
         if query6==1:
-            ty3=input("Enter the new Secondary type: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']''')
-            while ty2 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
+            ty3=input("Enter the new Secondary type: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']\n''')
+            while ty3 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
                 print('Please Enter correct Secondary T')
-                ty2=str(input("Enter Secondary Type of Pokemon: \n"))
-            if ty2=='none':
-                ty2=np.NaN
+                ty3=str(input("Enter Secondary Type of Pokemon: \n"))
+            if ty3=='none':
+                ty3=np.NaN
             df.at[q7-1,'type2']=ty3
 
         elif query5==2:
@@ -131,7 +137,7 @@ def update():
 
 #Creating a function for seeing the statistical data
 def stat():
-    kk=int(input('Press 1 for getting graph of Number of pokemons v/s Primary type. \n Press 2 for getting graph of Number of pokemons v/s Secondary type. \n Press 3 for getting graph of Number of pokemons v/s Legendary status. \n Press 4 for getting graph of Number of pokemons v/s Generation.'))
+    kk=int(input('Press 1 for getting graph of Number of pokemons v/s Primary type. \n Press 2 for getting graph of Number of pokemons v/s Secondary type. \n Press 3 for getting graph of Number of pokemons v/s Legendary status. \n Press 4 for getting graph of Number of pokemons v/s Generation.\n'))
     offset=.4
     if kk==1:
         kk1=plt.hist(df['type1'],bins=18,ec='k',align='mid')
@@ -159,7 +165,7 @@ def stat():
     
     elif kk==4:
         bins=np.arange(10)-0.25
-        d=plt.hist(df1['generation'],bins,width=0.5,align='mid')
+        d=plt.hist(df['generation'],bins,width=0.5,align='mid')
         plt.xlabel('Generation Number')
         plt.ylabel('No. of pokemons')
         plt.xticks(np.arange(8))
@@ -173,13 +179,14 @@ def stat():
 
 #Creating a loop for user to use the Pokedex
 while True:
+    print('Welcome to Pokedex!!!\n')
     query=int(input('What do you want to do?\n Press 1 for adding a Pokemon.\n Press 2 for searching a Pokemon.\n Press 3 for removing a Pokemon. \n Press 4 for updating a Pokemon. \n Press 5 to see graphs \n Press 0 to exit \n'))
     if query==1:
         add()
         z1=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
         if z1==2:
             print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
+            df.to_csv('Main\\pokedexfinal.csv',index=False)
             break
             
         elif z1==1:
@@ -194,7 +201,7 @@ while True:
         z2=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
         if z2==2:
             print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
+            df.to_csv('Main\\pokedexfinal.csv',index=False)
             break
             
         elif z2==1:
@@ -209,7 +216,7 @@ while True:
         z3=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
         if z3==2:
             print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
+            df.to_csv('Main\\pokedexfinal.csv',index=False)
             break
 
         elif z3==1:
@@ -224,7 +231,7 @@ while True:
         z4=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
         if z4==2:
             print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
+            df.to_csv('Main\\pokedexfinal.csv',index=False)
             break
 
         elif z4==1:
@@ -233,12 +240,13 @@ while True:
         else:
             print('Please Enter a Valid Input')
             pass
+        
     elif query==5:
         stat()
         z5=int(input('Do you want to Continue or Not:\n Press 1 to continue \n Press 2 to stop \n'))
         if z5==2:
             print('Thank you for using the Pokedex!!!!! \n')
-            df.to_csv('pokedexfinal.csv',index=False)
+            df.to_csv('Main\\pokedexfinal.csv',index=False)
             break
 
         elif z5==1:

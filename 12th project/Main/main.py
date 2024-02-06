@@ -14,11 +14,11 @@ def add():
             ask2=int(input('How many pokemons do you want to enter?: \n'))
             for i in range(0,ask2):
                 n=str(input('Enter the name of pokemon: \n'))
-                t1=str(input("Enter Primary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal']\n'''))
+                t1=str(input("Enter Primary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal'] \n'''))
                 while t1 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic', 'steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
                     print('Please Enter correct Primary Type: \n')
                     t1=str(input("Enter Primary Type of Pokemon: \n"))
-                t2=str(input("Enter Secondary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']\n'''))
+                t2=str(input("Enter Secondary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none'] \n'''))
                 while t2 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic', 'steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
                     print('Please Enter correct Secondary Type: \n')
                     t2=str(input("Enter Secondary Type of Pokemon: \n"))
@@ -82,17 +82,17 @@ def remove():
 
 #Creating a function to update a Pokemon
 def update():
-    query3=int(input('Want to update through Pokemon name(Press 1) or Pokedex No(Press 2): \n'))
+    query3=int(input('Want to update through Pokemon name(Enter 1) or Pokedex No(Enter 2): \n'))
     if query3==1:
         q4=str(input('Enter Pokemon Name: \n'))
         q5=df.index[df['name']==q4]
         q6=df.index.get_loc(q5[0])
         print(q5)
-        query5=int(input("What do you want to Update?: \n"'''Press 1 for Secondary Type, Press 2 for height, Press 3 for weight\n'''))
+        query5=int(input("What do you want to Update?: \n"'''Press 1 for Secondary Type, Press 2 for height, Press 3 for weight \n'''))
         if query5==1:
             ty2=input("Enter the new Secondary type: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']''')
             while ty2 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
-                print('Please Enter correct Secondary T')
+                print('Please Enter correct Secondary Type')
                 ty2=str(input("Enter Secondary Type of Pokemon: \n"))
             if ty2=='none':
                 ty2=np.NaN

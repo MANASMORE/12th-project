@@ -63,6 +63,8 @@ def search():
     elif query1==2:
         nam=str(input('Enter Pokemon Name: \n'))
         print(df.loc[df['name']==nam])
+    else:
+            print('Please enter valid input')
 
 #Creating a function to remove a Pokemon
 def remove():
@@ -75,6 +77,8 @@ def remove():
         nam1=str(input("Enter Pokemon Name: \n"))
         b=df.drop(df.index[df['name']==nam1],inplace=True)
         print(df)
+    else:
+            print('Please enter valid input')
 
 #Creating a function to update a Pokemon
 def update():

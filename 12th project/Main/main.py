@@ -16,12 +16,12 @@ def add():
                 n=str(input('Enter the name of pokemon: \n'))
                 t1=str(input("Enter Primary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal']\n'''))
                 while t1 not in df.type1.unique():
-                    print('Please Enter correct Primary T\n')
+                    print('Please Enter correct Primary Type: \n')
                     t1=str(input("Enter Primary Type of Pokemon: \n"))
                 t2=str(input("Enter Secondary Type of Pokemon: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']\n'''))
                 while t2 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic', 'steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
                     print('Please Enter correct Secondary T\n')
-                    t2=str(input("Enter Primary Type of Pokemon: \n"))
+                    t2=str(input("Enter Secondary Type of Pokemon: \n"))
                 if t2=='none':
                     t2=np.NaN
                 gen=int(input('Enter the Generation of your Pokemon: \n'))

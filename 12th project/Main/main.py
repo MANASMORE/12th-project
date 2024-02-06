@@ -56,7 +56,7 @@ def add():
 
 #Creating a function to search for a  Pokemon
 def search():
-    query1=int(input("Search p: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name'''))
+    query1=int(input("Search Pokemon: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name'''))
     if query1==1:
         pno=int(input('Enter Pokedex No: \n'))
         print(df.loc[[pno-1]])
@@ -68,7 +68,7 @@ def search():
 
 #Creating a function to remove a Pokemon
 def remove():
-    query2=int(input("Remove: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name\n'''))
+    query2=int(input("Remove: \n"'''Press 1 for Pokedex No, Press 2 for Pokemon Name \n'''))
     if query2==1:
         pno1=int(input('Enter Pokedex No: \n'))
         a=df.drop([pno1-1],inplace=True)
@@ -100,9 +100,11 @@ def update():
 
         elif query5==2:
             h=int(input('Enter new height of Pokemon(in metres): \n'))
+            df.at[q6, 'height_m']=h
 
         elif query5==3:
             w=int(input('Enter new weight of Pokemon(in kilograms): \n'))
+             df.at[q6,'weight_kg']=w
 
         else:
             print('Please Enter a Valid Input')
@@ -111,19 +113,19 @@ def update():
         q7=int(input('Enter Pokedex No: \n'))
         query6=int(input("What do you want to Update?: \n"'''Press 1 for Secondary Type, Press 2 for height, Press 3 for weight\n'''))
         if query6==1:
-            ty3=input("Enter the new Secondary type: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']\n''')
+            ty3=input("Enter the new Secondary type: \n"'''Please enter from the following -['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none'] \n''')
             while ty3 not in ['poison', 'flying', 'dark', 'electric', 'ice', 'ground','fairy', 'grass', 'fighting', 'psychic','steel', 'fire', 'rock','water', 'dragon', 'ghost', 'bug', 'normal','none']:
-                print('Please Enter correct Secondary T')
+                print('Please Enter correct Secondary Type')
                 ty3=str(input("Enter Secondary Type of Pokemon: \n"))
             if ty3=='none':
                 ty3=np.NaN
             df.at[q7-1,'type2']=ty3
 
-        elif query5==2:
+        elif query6==2:
             h=int(input('Enter new height of Pokemon(in metres): \n'))
             df.at[q7-1,'height_m']=h
 
-        elif query5==3:
+        elif query6==3:
             w=int(input('Enter new weight of Pokemon(in kilograms): \n'))
             df.at[q7-1,'weight_kg']=w
 

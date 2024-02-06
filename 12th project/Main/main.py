@@ -104,7 +104,7 @@ def update():
 
         elif query5==3:
             w=int(input('Enter new weight of Pokemon(in kilograms): \n'))
-             df.at[q6,'weight_kg']=w
+            df.at[q6,'weight_kg']=w
 
         else:
             print('Please Enter a Valid Input')
